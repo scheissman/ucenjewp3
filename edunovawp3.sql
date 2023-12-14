@@ -56,7 +56,7 @@ grupa int not null,
 polaznik int not null
 );
 
--- kreiranje vanjskih ključeva
+-- kreiranje vanjskih kljuÄŤeva
 alter table grupe add foreign key (smjer) references smjerovi(sifra);
 alter table grupe add foreign key (predavac) references predavaci(sifra);
 
