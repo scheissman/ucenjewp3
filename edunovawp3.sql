@@ -2,12 +2,7 @@ use master;
 go
 drop database if exists edunovawp3;
 go
--- ovo je komentar
-create database edunovawp3;
-go
---drop database edunovawp3;
---use master
-use edunovawp3;
+ja sam degenerik
 
 create table smjerovi(
 sifra int not null primary key identity(1,1),
