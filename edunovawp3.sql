@@ -2,7 +2,12 @@ use master;
 go
 drop database if exists edunovawp3;
 go
-ja sam degenerik
+-- ovo je komentar
+create database edunovawp3 collate Croatian_CI_AS;
+go
+--drop database edunovawp3;
+--use master
+use edunovawp3;
 
 create table smjerovi(
 sifra int not null primary key identity(1,1),
