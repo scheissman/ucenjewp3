@@ -32,8 +32,7 @@ CREATE TABLE Objave (
     Tekst VARCHAR(MAX),
     Datum DATETIME,
     LokacijaRibolova VARCHAR(100)
-	
+	Ribe_ID INT FOREIGN KEY REFERENCES Ribe(ID),
+    Mjesta_ID INT FOREIGN KEY REFERENCES MjestaRibolova(ID)
 	);
     
-alter table Ribe add foreign key (ID) references Ribe(ID);
-alter table Mjesta add foreign key (ID) references MjestaRibolova(ID);
