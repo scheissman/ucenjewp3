@@ -1,0 +1,9 @@
+C:\Users\scheiss\source\repos\Jokes\obj\Debug\net8.0\Jokes.csproj.AssemblyReference.cache
+C:\Users\scheiss\source\repos\Jokes\obj\Debug\net8.0\Jokes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\scheiss\source\repos\Jokes\obj\Debug\net8.0\Jokes.AssemblyInfoInputs.cache
+C:\Users\scheiss\source\repos\Jokes\obj\Debug\net8.0\Jokes.AssemblyInfo.cs
+C:\Users\scheiss\source\repos\Jokes\obj\Debug\net8.0\Jokes.csproj.CoreCompileInputs.cache
+C:\Users\scheiss\source\repos\Jokes\obj\Debug\net8.0\Jokes.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\scheiss\source\repos\Jokes\obj\Debug\net8.0\Jokes.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\scheiss\source\repos\Jokes\obj\Debug\net8.0\Jokes.RazorAssemblyInfo.cache
+C:\Users\scheiss\source\repos\Jokes\obj\Debug\net8.0\Jokes.RazorAssemblyInfo.cs
