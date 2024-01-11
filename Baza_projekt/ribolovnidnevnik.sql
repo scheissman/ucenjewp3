@@ -1,18 +1,16 @@
 USE MASTER;
 GO
-drop database if exists ribolovnidnevik;
+drop database if exists ribolov;
 go
-CREATE  DATABASE ribolovnidnevnik;
+CREATE  DATABASE ribolov;
 GO
-USE ribolovnidnevnik;
+USE ribolov;
 
 CREATE TABLE Korisnici (
     ID INT PRIMARY KEY,
     KorisnickoIme VARCHAR(50),
     Email VARCHAR(100),
-    Sifra VARCHAR(250),
-    ProfilnaSlika VARCHAR(255),
-    Opis text
+    Password VARCHAR(250)
 );
 
 CREATE TABLE Ribe (
@@ -22,19 +20,17 @@ CREATE TABLE Ribe (
     OpisRibe text
 );
 
-CREATE TABLE MjestaRibolova (
+CREATE TABLE Unos (
     ID INT PRIMARY KEY,
-    NazivMjesta VARCHAR(100)
-);
-
-CREATE TABLE Objave (
-    ID INT PRIMARY KEY,
-    Korisnik_ID INT FOREIGN KEY REFERENCES Korisnici(ID),
+    Korisnik_ID INT,
     Naslov VARCHAR(255),
     Tekst text,
     Datum DATETIME,
     LokacijaRibolova VARCHAR(255),
-	Ribe_ID INT FOREIGN KEY REFERENCES Ribe(ID),
-    Mjesta_ID INT FOREIGN KEY REFERENCES MjestaRibolova(ID)
+	Riba_ID INT 
 	);
     
+	alter table Unos add foreign key (Korisnik_ID) references Korisnici(ID);
+	alter table Unos add foreign key (Riba_ID) references Ribe(ID);
+
+
