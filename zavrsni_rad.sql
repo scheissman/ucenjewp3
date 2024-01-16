@@ -18,7 +18,7 @@ id int primary key identity (1,1),
 korisnici_id int not null,
 datum datetime not null,
 vodostaj varchar (50),
-biljeska Text
+biljeska varchar(max)
 );
 
 CREATE table ulov(
