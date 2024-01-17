@@ -17,11 +17,7 @@ create table unos (
 id int primary key identity (1,1),
 korisnici_id int not null,
 datum datetime not null,
-<<<<<<< HEAD
 vodostaj int,
-=======
-vodostaj varchar (50),
->>>>>>> baef35ef88339c426867ad8aaae24d28b4dd9fd1
 biljeska varchar(max)
 );
 
