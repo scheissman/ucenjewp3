@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UcenjeWP3
+namespace UcenjeCS
 {
     internal class E01UlazIzlaz
     {
@@ -25,4 +25,3 @@ namespace UcenjeWP3
 
     }
 }
-
