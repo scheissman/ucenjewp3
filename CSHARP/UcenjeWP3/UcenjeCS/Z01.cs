@@ -13,20 +13,18 @@ namespace UcenjeCS
             // Program od korisnika unosi cijeli broj
             // Ako je uneseni broj paran ispisuje SUPER
             // inače ispisuje OK
-
-            Console.Write("Unesi cijeli broj: ");
+            Console.WriteLine("unesi neki cijeli broj ");
             int broj = int.Parse(Console.ReadLine());
-
-            if(broj%2==0)
+            if (broj % 2 == 0)
             {
-                Console.WriteLine("SUPER");
+                Console.WriteLine("broje je paran(super)");
             }
             else
             {
-                Console.WriteLine("OK");
+                Console.WriteLine("broj je neparan(ok)");
             }
 
+            }
 
-        }
     }
 }
