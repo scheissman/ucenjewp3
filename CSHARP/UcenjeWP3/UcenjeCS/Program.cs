@@ -10,12 +10,19 @@ using UcenjeCS;
 //E04UvjetnoGrananjeSwitch.Izvedi();
 //E05Nizovi.Izvedi();
 //E06ForPetlja.Izvedi();
+//E07WhilePetlja.Izvedi();
+//E08DoWhile.Izvedi();
+E09Foreach.Izvedi();
+
 
 
 //Z01.Izvedi();
 //Z02.Izvedi();
 //Z03.Izvedi();
-Z04.Izvedi();
+//Z04.Izvedi();
+//Z05.Izvedi();
+
+//Matrica.Izvedi();
 
 
 
