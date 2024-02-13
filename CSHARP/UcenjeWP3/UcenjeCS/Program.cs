@@ -12,7 +12,7 @@ using UcenjeCS;
 //E06ForPetlja.Izvedi();
 //E07WhilePetlja.Izvedi();
 //E08DoWhile.Izvedi();
-E09Foreach.Izvedi();
+//E09Foreach.Izvedi();
 
 
 
@@ -23,6 +23,6 @@ E09Foreach.Izvedi();
 //Z05.Izvedi();
 
 //Matrica.Izvedi();
-
+Subota1.Izvedi();
 
 

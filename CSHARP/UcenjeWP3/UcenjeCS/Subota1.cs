@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace mojeucenjecs
+namespace UcenjeCS
 {
     public class Subota1
     {
@@ -128,8 +128,9 @@ namespace mojeucenjecs
             // }
 
             Console.ForegroundColor = ConsoleColor.Red;
-            System.Console.Write("Edunova Osijek");
-            Console.ResetColor(); 
+            System.Console.WriteLine("Edunova Osijek");
+            Console.ResetColor();
+            Console.WriteLine("🎁");
 
 
 
