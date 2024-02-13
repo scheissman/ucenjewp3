@@ -11,9 +11,19 @@ namespace UcenjeCS
 
         public static void Izvedi()
         {
-            // Program unosi dva broja
-            // Ispisuje veći
-            // DZ
+            Console.Write("Unesi prvi cijeli broj : ");
+            int prvibroj = int.Parse(Console.ReadLine());
+            Console.Write("Unesi drugi cijeli broj : ");
+            int drugibroj = int.Parse(Console.ReadLine());
+            if (prvibroj > drugibroj)
+            {
+                Console.WriteLine("prvi je veci");
+
+            }
+            else
+            {
+                Console.WriteLine("drugi je veci");
+            }
 
         }
     }
