@@ -1,34 +1,39 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace mojeucenjecs
+namespace UcenjeCS
 {
-    public class Z07
+    internal class Z07
     {
-        public static void Izvedi()
+        public static void Izvedi() 
         {
-            //program unosi ime osoobe , visinu i tezinu 
-            //program ispisuje crvenom bojom 
-            //ako je visina > 170 i < 190 , te tezina < 90.5kg
-            //ti , ime si zgodan ili zgodna
+            // Pogram unosi ime osobe, visinu i težinu
+            // Program ispisuje crvenom bojom
+            // ako je visina > 170 i < 190 te težina je < 90,5
+            // Ti, XXXX si zgodan / zgodna
 
-            string ime = Pomocno.UcitajString("Unesi ime osobe");
-            int visina = Pomocno.UcitajCijeliBroj("Unesi visinu u cm ");
-            float tezina = Pomocno.UcitajDecimalniBroj("Unesi tezinu ");
-
-            if (visina > 170 && visina < 190 && tezina < 90.5)
+            string ime = Pomocno.UcitajString("Kako se zoves");
+            int visina = Pomocno.UcitajCijeliBroj("Koliko si visok?");
+            float tezina = Pomocno.UcitajDecimalniBroj("Koliko imas kg?");
+            if (visina > 170 && visina <190 && tezina < 90.5) 
             {
             Console.ForegroundColor = ConsoleColor.Red;
-            
-            Console.WriteLine(ime[^1] == 'a' ? "zgodna si " + ime : "zgodan si " + ime);
-            Console.ResetColor(); 
+                Console.WriteLine(ime[^1] == 'a' ? $"Ti {ime} si zgodna " : $"Ti {ime} si zgodan ");
+                Console.ResetColor();
             }
-            else
-            {
-                System.Console.WriteLine("ocigledno nisi dobroizgledajuci ");
-            }
+
+
+
+
+
+
+
+
+
+
 
 
 
