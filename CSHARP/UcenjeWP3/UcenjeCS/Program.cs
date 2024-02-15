@@ -14,7 +14,7 @@ using UcenjeCS;
 //E08DoWhile.Izvedi();
 //E09Foreach.Izvedi();
 //E10Metode.Izvedi();  //kada se metoda poziva na klasi ona je static
-
+//E11Rekurzija.Izvedi();
 
 
 //Z01.Izvedi();
@@ -23,9 +23,9 @@ using UcenjeCS;
 //Z04.Izvedi();
 //Z05.Izvedi();
 //Z06.Izvedi();
-Z07.Izvedi();
+//Z07.Izvedi();
 
 //Matrica.Izvedi();
 //Subota1.Izvedi();
 
-
+UcenjeCS.E12KlasaObjekt.Program.Izvedi();

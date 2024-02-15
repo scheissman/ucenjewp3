@@ -20,7 +20,7 @@ namespace UcenjeCS
             float tezina = Pomocno.UcitajDecimalniBroj("Koliko imas kg?");
             if (visina > 170 && visina <190 && tezina < 90.5) 
             {
-            Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(ime[^1] == 'a' ? $"Ti {ime} si zgodna " : $"Ti {ime} si zgodan ");
                 Console.ResetColor();
             }
