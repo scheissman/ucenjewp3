@@ -45,7 +45,7 @@ namespace UcenjeCS
             {
                 for (int j = 0; j < stupci; j++)
                 {
-                    Console.Write(matrica[i, j] + "\t");
+                     Console.Write("{0,4}", matrica[i, j]);
                 }
                 Console.WriteLine();
             }          
