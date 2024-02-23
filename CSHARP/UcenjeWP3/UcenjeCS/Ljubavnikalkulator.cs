@@ -33,6 +33,7 @@ namespace UcenjeCS
                 brojevniarray[pocetaknovogarraya++] = Zbroj;
             }
 
+            int[] noviZbrojevi = ZbrojiRekurzivno(brojevniarray);
             //ZbrojiRekurzivno(brojevniarray);
 
             string novoString = string.Join("", noviZbrojevi);
