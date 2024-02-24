@@ -27,9 +27,9 @@ using UcenjeCS;
 
 //Matrica.Izvedi();
 //Subota1.Izvedi();
-//Ciklicnaucenje.Izvedi();
+Ciklicnaucenje.Izvedi();
 //UcenjeCS.E12KlasaObjekt.Program.Izvedi();
 //new UcenjeCS.E13Nasljedivanje.Program();     //pozvao sam konstruktor od programa u e13 
 //kada vidimo new onda se poziva konstruktor
 
-Ljubavnikalkulator.Izvedi();
+//Ljubavnikalkulator.Izvedi();
