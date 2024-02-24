@@ -60,17 +60,18 @@ namespace UcenjeCS
             for (int i = 0; i < brojevi.Length / 2; i++)
             {
                 int zbroj = brojevi[i] + brojevi[brojevi.Length - 1 - i];
+
                 if (zbroj >= 10)
                 {
-                    string zbrojString = zbroj.ToString();
-                    noviZbrojevi[i] = int.Parse(zbrojString[0].ToString());
-                    noviZbrojevi[noviZbrojevi.Length - 1] = int.Parse(zbrojString[1].ToString());
+                    noviZbrojevi[i] = zbroj / 10 ;
+                    noviZbrojevi[noviZbrojevi.Length - 1] = zbroj % 10;
                 }
 
                 else
                 {
                     noviZbrojevi[i] = zbroj;
                 }
+               
             }
 
             if (brojevi.Length % 2 != 0)
@@ -81,6 +82,7 @@ namespace UcenjeCS
             if (brojevi.Length > 3)
             {
 
+                
                 return ZbrojiRekurzivno(noviZbrojevi);
             }
             else
