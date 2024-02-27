@@ -30,8 +30,8 @@ namespace UcenjeCS
 | $$\  $$ | $$  | $$| $$      | $$\  $$ | $$  | $$| $$      | $$  | $$   | $$  | $$  | $$| $$  \ $$
 | $$ \  $$| $$  | $$| $$$$$$$$| $$ \  $$|  $$$$$$/| $$$$$$$$| $$  | $$   | $$  |  $$$$$$/| $$  | $$
 |__/  \__/|__/  |__/|________/|__/  \__/ \______/ |________/|__/  |__/   |__/   \______/ |__/  |__/");
-            string ime1 = Pomocno.UcitajString(" Unesi prvo ime ").ToLower();
-            string ime2 = Pomocno.UcitajString(" Unesi drugo ime ").ToLower();
+            string ime1 = Pomocno.UcitajString(" Unesi prvo ime ").ToUpper();
+            string ime2 = Pomocno.UcitajString(" Unesi drugo ime ").ToUpper();
 
 
             string ukupno = ime1 + ime2;
