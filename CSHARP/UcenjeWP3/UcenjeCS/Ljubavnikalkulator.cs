@@ -15,7 +15,6 @@ namespace UcenjeCS
             prvo = UcitajString("Unesi prvo ime").ToLower();
             drugo = UcitajString("Unesi drugo ime").ToLower();
             ukupno = prvo + drugo;
-            int[] brojevi = new int[2];
             char[] ukupnoarray = ukupno.ToCharArray();
             int[] brojevniarray = new int[ukupnoarray.Length];
             int pocetaknovogarraya = 0;
