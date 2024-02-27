@@ -64,7 +64,22 @@ namespace UcenjeCS
 
             int rezultat = int.Parse(novoString2);
 
-            Console.WriteLine(ime1 + " + " + ime2 + " se vole " + rezultat + "%");
+            Console.Write(ime1 + " i " + ime2 + " se vole " );
+            
+                if (rezultat <= 50)
+                    { Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(rezultat + "%");
+                Console.ResetColor(); }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(rezultat + "%");
+                Console.ResetColor();
+
+
+            }
+
+
 
 
             static int[] ZbrojiRekurzivno(int[] brojevi)
