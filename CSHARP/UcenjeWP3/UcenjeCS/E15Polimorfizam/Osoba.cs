@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UcenjeCS.E12KlasaObjekt.Edunova
+namespace UcenjeCS.E15Polimorfizam
 {
-    internal class Predavac
+    internal abstract class Osoba:Entitet
     {
-        public int? Sifra { get; set; }
+        public abstract string Pozdravi();
         public string? Ime { get; set; }
+
         public string? Prezime { get; set; }
-        public string? Email { get; set; }
+
         public string? Oib { get; set; }
-        public string? BrojUgovora { get; set; }
+
+        public string? Email { get; set; }
     }
 }

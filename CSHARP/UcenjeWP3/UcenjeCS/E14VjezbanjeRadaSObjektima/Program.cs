@@ -19,7 +19,6 @@ namespace UcenjeCS.E14VjezbanjeRadaSObjektima
             // konstruktor služi da bi konstruirao potrebne zavisnosti
             Osobe = new List<Osoba>();
             TestPodaci();
-            logo.Logo();
             PozdravnaPoruka();
             Izbornik();
         }

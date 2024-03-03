@@ -2,7 +2,15 @@
 
 using UcenjeCS;
 
-new UcenjeCS.E14VjezbanjeRadaSObjektima.Program();
+new UcenjeCS.E17KonzolnaAplikacija.Izbornik();
+
+//new UcenjeCS.E16Vjezbanje.Program();
+
+//Test.Izvedi();
+
+//new UcenjeCS.E15Polimorfizam.Program();
+
+//new UcenjeCS.E14VjezbanjeRadaSObjektima.Program();
 
 // kada vidimo ključnu riječ new poziva se konstruktor
 
