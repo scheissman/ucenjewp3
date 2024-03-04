@@ -14,5 +14,6 @@ namespace UcenjeCS.E12KlasaObjekt.Edunova
         public string? Email { get; set; }
         public string? Oib { get; set; }
         public string? BrojUgovora { get; set; }
+        public string Iban { get; internal set; }
     }
 }

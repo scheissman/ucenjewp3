@@ -5,8 +5,10 @@ namespace UcenjeCS.E17KonzolnaAplikacija
     {
         public ObradaSmjer ObradaSmjer { get; }
         public ObradaPolaznik ObradaPolaznik { get; }
+        public ObradaPredavac ObradaPredavac { get; }
 
         private ObradaGrupa ObradaGrupa;
+        
 
         public Izbornik() 
         {
@@ -14,6 +16,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Pomocno.dev = true;
             ObradaSmjer = new ObradaSmjer();
             ObradaPolaznik = new ObradaPolaznik();
+            ObradaPredavac = new ObradaPredavac();
             ObradaGrupa=new ObradaGrupa(this);
             PozdravnaPoruka();
             PrikaziIzbornik();
@@ -33,9 +36,11 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Console.WriteLine("1. Smjerovi");
             Console.WriteLine("2. Polaznici");
             Console.WriteLine("3. Grupe");
-            Console.WriteLine("4. Izlaz iz programa");
-            Console.WriteLine("5. Times New Roman");
-            Console.WriteLine("6. Arial");
+            Console.WriteLine("4. Predavaci");
+            Console.WriteLine("5. Izlaz iz programa");
+            Console.WriteLine("6. Times New Roman");
+            Console.WriteLine("7. Arial");
+            
 
             switch (Pomocno.ucitajBrojRaspon("Odaberite stavku izbornika: ",
                 "Odabir mora biti 1 - 4.", 1, 6))
@@ -50,20 +55,28 @@ namespace UcenjeCS.E17KonzolnaAplikacija
                     PrikaziIzbornik();
                     break;
                 case 3:
+                    
                     ObradaGrupa.PrikaziIzbornik();
                     PrikaziIzbornik();
                     break;
                 case 4:
+                    ObradaPredavac.PrikaziIzbornik();
+                    PrikaziIzbornik();
+                    break;
+                case 5:
                     Console.WriteLine("Hvala na korištenju, doviđenja");
                     break;
-                    case 5:
+                    case 6:
                     ConsoleHelper.SetConsoleFont("Times New Roman", 40);
                     PrikaziIzbornik();
                     break;
-                case 6:
+                case 7:
                     ConsoleHelper.SetConsoleFont("Arial", 50);
                     PrikaziIzbornik();
                     break;
+                
+              
+
 
             }
 
