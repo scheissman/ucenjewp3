@@ -223,15 +223,9 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
 
 
-
         private List<Polaznik> PostaviPolaznike()
         {
             List<Polaznik> polaznici = new List<Polaznik>();
-
-            foreach (Grupa grupa in Grupe)
-            {
-                polaznici.AddRange(grupa.Polaznici);
-            }
 
             while (Pomocno.ucitajBool("Želite li dodati/brisati polaznike? (da ili bilo što drugo za ne): "))
             {
@@ -239,7 +233,14 @@ namespace UcenjeCS.E17KonzolnaAplikacija
                 if (x == 1)
                 {
                     Polaznik noviPolaznik = PostaviPolaznika();
-                    polaznici.Add(noviPolaznik);
+                    if (!polaznici.Contains(noviPolaznik))
+                    {
+                        polaznici.Add(noviPolaznik);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Polaznik već postoji.");
+                    }
                 }
                 else if (x == 2)
                 {
