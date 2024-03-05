@@ -71,15 +71,50 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         private void PromjenaGrupe()
         {
+
+
             PrikaziGrupe();
             int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj grupe: ", "Nije dobar odabir", 1, Grupe.Count());
             var p = Grupe[index - 1];
-            p.Sifra = Pomocno.ucitajCijeliBroj("Unesite šifra grupe (" + p.Sifra + "): ",
-                "Unos mora biti pozitivni cijeli broj");
-            p.Naziv = Pomocno.UcitajString("Unesite naziv grupe (" + p.Naziv + "): ",
-                "Unos obavezan");
+            int staraSifra = p.Sifra; 
+            string stariNaziv = p.Naziv;
+            Smjer stariSmjer = p.Smjer; 
+
+            Console.WriteLine("Unesite novi šifra grupe ili pritisnite Enter za zadržavanje starog (" + p.Sifra + "): ");
+            string novaSifraInput = Console.ReadLine();
+            if (!string.IsNullOrEmpty(novaSifraInput))
+            {
+                int novaSifra;
+                if (int.TryParse(novaSifraInput, out novaSifra))
+                {
+                    p.Sifra = novaSifra;
+                }
+                else
+                {
+                    Console.WriteLine("Neispravan unos, zadržavam staru šifru.");
+                }
+            }
+
+            Console.WriteLine("Unesite novi naziv grupe ili pritisnite Enter za zadržavanje starog (" + p.Naziv + "): ");
+            string noviNazivInput = Console.ReadLine();
+            if (!string.IsNullOrEmpty(noviNazivInput))
+            {
+                p.Naziv = noviNazivInput;
+            }
+
             Console.WriteLine("Trenutni smjer: {0}", p.Smjer.Naziv);
-            p.Smjer = PostaviSmjer();
+            Console.WriteLine("Unesite novi smjer grupe ili pritisnite Enter za zadržavanje starog (" + p.Smjer.Naziv + "): ");
+            string noviSmjerInput = Console.ReadLine();
+            if (!string.IsNullOrEmpty(noviSmjerInput))
+            {
+                p.Smjer = PostaviSmjer();
+            }
+            else
+            {
+                p.Smjer = stariSmjer; 
+            }
+
+
             Console.WriteLine("Trenutni polaznici:");
             Console.WriteLine("------------------");
             Console.WriteLine("---- Polaznici ----");
@@ -112,17 +147,42 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         private void UnosNovogGrupe()
         {
             var g = new Grupa();
-            g.Sifra = Pomocno.ucitajCijeliBroj("Unesite šifra grupe: ",
-                "Unos mora biti pozitivni cijeli broj");
-            g.Naziv = Pomocno.UcitajString("Unesite naziv grupe: ",
-                "Unos obavezan");
+            int novaSifra;
+            bool JedisnstvenaSifra = false;
+
+            do
+            {
+                novaSifra = Pomocno.ucitajCijeliBroj("Unesite šifra grupe: ", "Unos mora biti pozitivni cijeli broj");
+                JedisnstvenaSifra = jedinstvenasifra(novaSifra);
+
+                if (!JedisnstvenaSifra)
+                {
+                    Console.WriteLine("Grupa sa unesenom šifrom već postoji. Molimo unesite jedinstvenu šifru.");
+                }
+            } while (!JedisnstvenaSifra);
+
+            g.Sifra = novaSifra;
+            g.Naziv = Pomocno.UcitajString("Unesite naziv grupe: ", "Unos obavezan");
             g.Smjer = PostaviSmjer();
             g.Polaznici = PostaviPolaznike();
             g.Predavaci = PostaviPredavace();
             g.DatumPocetka = Pomocno.ucitajDatum("Unesi datum grupe u formatu dd.MM.yyyy.", "Greška");
-            Grupe.Add(g);
 
+            Grupe.Add(g);
         }
+
+        private bool jedinstvenasifra(int novaSifra)
+        {
+            foreach (var grupa in Grupe)
+            {
+                if (grupa.Sifra == novaSifra)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
 
         private List<Predavac> PostaviPredavace()
         {
