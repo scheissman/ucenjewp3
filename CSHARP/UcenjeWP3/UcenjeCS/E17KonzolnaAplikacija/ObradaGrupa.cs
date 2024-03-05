@@ -146,11 +146,23 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         private List<Polaznik> PostaviPolaznike()
         {
            List<Polaznik> polaznici= new List<Polaznik>();
-            while(Pomocno.ucitajBool("Želite li dodati polaznike? (da ili bilo što drugo za ne): "))
-            {
-                polaznici.Add(PostaviPolaznika());
-            }
 
+            int x = Pomocno.ucitajBrojRaspon("Za Unos novih polaznika (1) za brisanje (2), bilo sta drugo za izlaz ", "Nije dobar unos", 1 ,2);
+            if (x == 1)
+            {
+                while (Pomocno.ucitajBool("Želite li dodati polaznike? (da ili bilo što drugo za ne): "))
+                {
+                    polaznici.Add(PostaviPolaznika());
+                }
+            }
+            else if (x == 2)
+            {
+                while (Pomocno.ucitajBool("Želite li obrisati polaznike? (da ili bilo što drugo za ne): "))
+                {
+                   ObrisiPolaznika();
+                }
+            }
+             
             return polaznici;
         }
 
@@ -160,6 +172,48 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1, Izbornik.ObradaPolaznik.Polaznici.Count());
             return Izbornik.ObradaPolaznik.Polaznici[index-1];
         }
+        private void ObrisiPolaznika()
+        {
+            
+                Console.WriteLine("Trenutni polaznici:");
+                Console.WriteLine("------------------");
+                Console.WriteLine("---- Polaznici ----");
+                Console.WriteLine("------------------");
+                int b = 1;
+                foreach (Grupa grupa in Grupe)
+                {
+                    foreach (Polaznik polaznik in grupa.Polaznici)
+                    {
+                        Console.WriteLine("{0}. {1}", b++, polaznik);
+                    }
+                }
+                Console.WriteLine("------------------");
+
+                int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj polaznika: ", "Nije dobar odabir", 1, Grupe.SelectMany(g => g.Polaznici).Count());
+
+                int grupaIndex = 0;
+                int polaznikIndex = index - 1;
+                foreach (Grupa grupa in Grupe)
+                {
+                    int polazniciCount = grupa.Polaznici.Count;
+                    if (polaznikIndex < polazniciCount)
+                    {
+                        grupa.Polaznici.RemoveAt(polaznikIndex);
+                        break;
+                    }
+                    else
+                    {
+                        
+                        polaznikIndex -= polazniciCount;
+                        grupaIndex++;
+                    }
+                }
+            }
+
+       
+
+
+
 
         public void PrikaziGrupe()
         {
@@ -181,3 +235,20 @@ namespace UcenjeCS.E17KonzolnaAplikacija
        
     }
 }
+
+
+
+
+
+
+
+//private List<Polaznik> PostaviPolaznike()
+//{
+//    List<Polaznik> polaznici = new List<Polaznik>();
+//    while (Pomocno.ucitajBool("Želite li dodati polaznike? (da ili bilo što drugo za ne): "))
+//    {
+//        polaznici.Add(PostaviPolaznika());
+//    }
+
+//    return polaznici;
+//}
