@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UcenjeCS.E12KlasaObjekt.Edunova;
+using UcenjeCS.E17KonzolnaAplikacija.Model;
+
 
 namespace UcenjeCS.E17KonzolnaAplikacija
 {
@@ -139,6 +140,6 @@ namespace UcenjeCS.E17KonzolnaAplikacija
                 });
             }
 
-        }
     }
+}
 

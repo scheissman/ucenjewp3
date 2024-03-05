@@ -24,13 +24,15 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         private void TestniPodaci()
         {
-            //Grupe.Add(new Grupa() { 
-            //Sifra=1,
-            //Naziv="WP3",
-            //Smjer = Izbornik.ObradaSmjer.Smjerovi[0],
-            //Polaznici = Izbornik.ObradaPolaznik.Polaznici.GetRange(0,5),
-            //DatumPocetka = DateTime.Now
-            //});
+            Grupe.Add(new Grupa()
+            {
+                Sifra = 1,
+                Naziv = "WP3",
+                Smjer = Izbornik.ObradaSmjer.Smjerovi[0],
+                Polaznici = Izbornik.ObradaPolaznik.Polaznici.GetRange(0, 5),
+                
+                DatumPocetka = DateTime.Now
+            }) ;
         }
 
         public void PrikaziIzbornik()
@@ -89,6 +91,8 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             }
             Console.WriteLine("------------------");
             p.Polaznici = PostaviPolaznike();
+            p.Predavaci = PostaviPredavace();
+
         }
 
         private Smjer PostaviSmjer()
@@ -114,9 +118,29 @@ namespace UcenjeCS.E17KonzolnaAplikacija
                 "Unos obavezan");
             g.Smjer = PostaviSmjer();
             g.Polaznici = PostaviPolaznike();
+            g.Predavaci = PostaviPredavace();
             g.DatumPocetka = Pomocno.ucitajDatum("Unesi datum grupe u formatu dd.MM.yyyy.", "Greška");
             Grupe.Add(g);
 
+        }
+
+        private List<Predavac> PostaviPredavace()
+        {
+            List<Predavac> predavaci = new List<Predavac>();
+            while (Pomocno.ucitajBool("Želite li dodati predavaca (da ili bilo što drugo za ne): "))
+            {
+                predavaci.Add(PostaviPredavaca());
+            }
+
+            return predavaci;
+
+        }
+
+        private Predavac PostaviPredavaca()
+        {
+            Izbornik.ObradaPredavac.PregledPredavaca();
+            int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj predavaca: ", "Nije dobar odabir", 1, Izbornik.ObradaPredavac.Predavaci.Count());
+            return Izbornik.ObradaPredavac.Predavaci[index - 1];
         }
 
         private List<Polaznik> PostaviPolaznike()
