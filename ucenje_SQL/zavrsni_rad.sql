@@ -25,8 +25,9 @@ CREATE table ulov(
 id int primary key identity (1,1),
 ribe_id int not null,
 unos_id int not null,
-tezina varchar (50),
-duzina varchar (50),
+tezina decimal (18,3) ,
+duzina int,
+fotografija varchar (255),
 kolicina int not null 
 );
 
@@ -125,12 +126,12 @@ insert into ribe (vrsta) values
 INSERT INTO ulov (ribe_id,unos_id, tezina, duzina, kolicina) values
 
 (16,1,null, null, 1),
-(36,2 ,'40kg', '2metra šestdeset 7 cantima', 1),
-(36,3,'15kg', '150cm', 1),
-(36,3,'22kg', '180', 1),
-(30,5,'12kg', null, 57),
-(19,6,'10kg', null, 1),
-(33,7,'27kila', null, 5),
+(36,2 ,'40', '122', 1),
+(36,3,'15', '150', 1),
+(36,3,'22', '180', 1),
+(30,5,'12', null, 57),
+(19,6,'10', null, 1),
+(33,7,'27', null, 5),
 (5,8,null, null, 11);
 
 
