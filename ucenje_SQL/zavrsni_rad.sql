@@ -1,9 +1,9 @@
 use master;
---go go se koristi samo u ssms-u
+go
 drop database if exists ribolovnidnevnik;
---go
+go
 create database ribolovnidnevnik collate Croatian_CI_AS;
---go
+go
 use ribolovnidnevnik;
 
 CREATE table korisnici (
@@ -13,7 +13,7 @@ prezime varchar (50) not null,
 email varchar (100) not null 
 );
 
-create table unos (
+create table unosi (
 id int primary key identity (1,1),
 korisnici_id int not null,
 datum datetime not null,
@@ -21,7 +21,7 @@ vodostaj int,
 biljeska varchar(max)
 );
 
-CREATE table ulov(
+CREATE table ulovi(
 id int primary key identity (1,1),
 ribe_id int not null,
 unos_id int not null,
@@ -36,9 +36,9 @@ id int primary key identity (1,1),
 vrsta varchar (50) not null
 );
 
-alter table unos add foreign key (korisnici_id) references korisnici(id);
-alter table ulov add foreign key (ribe_id) references ribe(id);
-alter table ulov add foreign key (unos_id) references unos(id);
+alter table unosi add foreign key (korisnici_id) references korisnici(id);
+alter table ulovi add foreign key (ribe_id) references ribe(id);
+alter table ulovi add foreign key (unos_id) references unosi(id);
 
 
 
@@ -69,7 +69,7 @@ insert into korisnici (ime,prezime,email) values
 ('Veljko','Vujić','veljko2805vujic@gmail.com');
 
 
-INSERT  INTO unos  (korisnici_id,datum,vodostaj, biljeska) values
+INSERT  INTO unosi  (korisnici_id,datum,vodostaj, biljeska) values
 (1,'2023-11-10', 100, 'danas sam upecao ajkulu'),
 (2,'2023-11-10', 111, 'kada sam izvadio soma, klecnio je brod kod apatina'),
 (3,'2023-11-10', 21, 'upecao soma mužjaka od 30 kila, dosla poslije zenka , muzjak izgledao neuhranjeno kraj nje'),
@@ -123,7 +123,7 @@ insert into ribe (vrsta) values
 
 
 
-INSERT INTO ulov (ribe_id,unos_id, tezina, duzina, kolicina) values
+INSERT INTO ulovi (ribe_id,unos_id, tezina, duzina, kolicina) values
 
 (16,1,null, null, 1),
 (36,2 ,'40', '122', 1),
@@ -133,13 +133,6 @@ INSERT INTO ulov (ribe_id,unos_id, tezina, duzina, kolicina) values
 (19,6,'10', null, 1),
 (33,7,'27', null, 5),
 (5,8,null, null, 11);
-
-
-select a.ime , b.id , b.biljeska ,c.kolicina, d.vrsta 
-from korisnici a 
-inner join unos b on a.id = b.korisnici_id 
-inner join ulov c on b.id = c.unos_id 
-inner join ribe d on c.ribe_id = d.id;
 
 
 
