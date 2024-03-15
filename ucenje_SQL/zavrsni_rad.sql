@@ -1,3 +1,20 @@
+--produkcija
+SELECT name, collation_name FROM sys.databases;
+GO
+ALTER DATABASE db_aa662a_ribolovnidnevnik SET SINGLE_USER WITH
+ROLLBACK IMMEDIATE;
+GO
+ALTER DATABASE db_aa662a_ribolovnidnevnik COLLATE Croatian_CI_AS;
+GO
+ALTER DATABASE db_aa662a_ribolovnidnevnik SET MULTI_USER;
+GO
+SELECT name, collation_name FROM sys.databases;
+GO
+--produkcija
+
+
+
+--lokalno
 use master;
 go
 drop database if exists ribolovnidnevnik;
@@ -5,6 +22,9 @@ go
 create database ribolovnidnevnik collate Croatian_CI_AS;
 go
 use ribolovnidnevnik;
+--lokalno
+
+
 
 CREATE table korisnici (
 id int primary key identity (1,1),
