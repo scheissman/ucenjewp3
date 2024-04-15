@@ -30,7 +30,8 @@ CREATE table korisnici (
 id int primary key identity (1,1),
 ime varchar (59) not null,
 prezime varchar (50) not null,
-email varchar (100) not null 
+email varchar (100) not null ,
+PasswordHash varchar(255) NOT NULL
 );
 
 create table unosi (
